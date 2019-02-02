@@ -1,0 +1,23 @@
+Justin Fortner
+ID#1481947
+jfortner
+CS101 PA1 Tantalo
+README
+
+Submitted Files:
+	Files Provided: 
+		ListClient.java:
+			Tests List.java
+	
+	Files Altered:
+		Makefile:
+			Creates an executable JAr file Lex
+			Clean will remove Lex and class files
+	
+	Files Written:
+		List.java:
+			List ADT creates services to be used by Lex
+		Lex.java:
+			Uses List.java to indirectly sort an array alphabetically using its indicies
+		README:
+			List of all submitted files and descriptions of said files

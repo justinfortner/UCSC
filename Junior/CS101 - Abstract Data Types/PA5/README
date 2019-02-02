@@ -1,0 +1,31 @@
+Justin Fortner
+ID#1481947
+jfortner
+CS101 PA5 Tantalo
+README
+
+Submitted Files:
+	Files Provided: 
+		None
+	
+	Files Altered:
+		Makefile:
+			Creates an executable Jar file FindComponents
+			Clean will remove FindComponents, ListClient, GraphTest and .o files
+		Graph.h:
+			Header file for Graph.c. Also defines NIL and INF.
+			
+	Files Written:
+		List.c:
+			List ADT creates services to be used by Graph
+		List.h:
+			Header file for List.c
+		Graph.c:
+			Graph ADT creates services to be used by FindComponents
+		GraphTest.c:
+			Used to test graph.c.
+		FindComponenets.c:
+			Reads in a file. Sets up a graph. Prints the Graph. Runs a DFS on the graph and the transpose of the graph.
+			Dteremines the strong compnents of the graph. Prints those componenets in topological order.
+		README:
+			List of all submitted files and descriptions of said files

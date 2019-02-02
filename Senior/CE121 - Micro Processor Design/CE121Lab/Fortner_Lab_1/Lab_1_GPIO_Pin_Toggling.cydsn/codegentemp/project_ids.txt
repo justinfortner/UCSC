@@ -1,0 +1,7 @@
+C:\Users\jfortner\Desktop\Fortner_Lab_1\Lab_1_GPIO_Pin_Toggling.cydsn\Lab_1_GPIO_Pin_Toggling.cyprj|13a1258c-dbf7-4a3c-b128-b44a7acf409d
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|cc1e725d-7dbc-4519-bcbe-b0493c84b6ba
+C:\Users\jfortner\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|ca1f5dfe-a866-464a-a58e-be8dd9fea8f8
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|fe71ad0f-a0f9-4548-890e-c383dae30716
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|238b3b76-bdbc-4239-9f17-b751e487c681
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|47109b47-6753-4e0f-84bc-9470dbb00af1
+C:\Users\jfortner\Desktop\Fortner_Lab_1\Lab_1_LED_Brightness.cydsn\Lab_1_LED_Brightness.cyprj|66290e05-0ade-4fc5-b040-e73b9316bb0d

@@ -1,0 +1,23 @@
+Justin Fortner
+ID#1481947
+jfortner
+CS101 PA2 Tantalo
+README
+
+Submitted Files:
+	Files Provided: 
+		ListClient.c:
+			Tests List.c
+	
+	Files Altered:
+		Makefile:
+			Creates an executable Jar file Lex
+			Clean will remove Lex, ListClient and .o files
+	
+	Files Written:
+		List.c:
+			List ADT creates services to be used by Lex
+		Lex.c:
+			Uses List.c to indirectly sort an array alphabetically using its indicies
+		README:
+			List of all submitted files and descriptions of said files

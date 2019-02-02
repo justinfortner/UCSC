@@ -1,0 +1,592 @@
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** 
+  14:main.c        **** int main(void)
+  15:main.c        **** {
+  28              		.loc 1 15 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  16:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  36              		.loc 1 16 0
+  37              		.syntax unified
+  38              	@ 16 "main.c" 1
+  39 0002 62B6     		CPSIE   i
+  40              	@ 0 "" 2
+  17:main.c        ****     //Part of Component API
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 2
+
+
+  18:main.c        ****     PWM_Start();
+  41              		.loc 1 18 0
+  42              		.thumb
+  43              		.syntax unified
+  44 0004 FFF7FEFF 		bl	PWM_Start
+  45              	.LVL0:
+  46              	.L2:
+  19:main.c        ****     //Part of Control Register API
+  20:main.c        ****     uint8 one = 1;
+  21:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  22:main.c        **** 
+  23:main.c        ****     for(;;)
+  24:main.c        ****     {
+  25:main.c        ****         //Per-Pin API Start
+  26:main.c        ****         //CyPins_ClearPin(BLUE_0);
+  27:main.c        ****         //CyPins_ClearPin(GREEN_0);
+  28:main.c        ****         //CyPins_ClearPin(RED_0);
+  29:main.c        ****         //CyDelay(500);
+  30:main.c        ****         //CyPins_SetPin(RED_0);
+  31:main.c        ****         //CyPins_SetPin(BLUE_0);
+  32:main.c        ****         //CyPins_SetPin(GREEN_0);
+  33:main.c        ****         //CyDelay(500);
+  34:main.c        ****         //Per-Pin API End
+  35:main.c        ****       
+  36:main.c        ****         //Contol Register Start
+  37:main.c        ****         Control_Write(one);
+  47              		.loc 1 37 0 discriminator 1
+  48 0008 0120     		movs	r0, #1
+  49 000a FFF7FEFF 		bl	Control_Write
+  50              	.LVL1:
+  51 000e FBE7     		b	.L2
+  52              		.cfi_endproc
+  53              	.LFE63:
+  54              		.size	main, .-main
+  55              		.text
+  56              	.Letext0:
+  57              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  58              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  59              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+  60              		.file 5 "Generated_Source\\PSoC5/PWM.h"
+  61              		.file 6 "Generated_Source\\PSoC5/Control.h"
+  62              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+  63              		.section	.debug_info,"",%progbits
+  64              	.Ldebug_info0:
+  65 0000 12010000 		.4byte	0x112
+  66 0004 0400     		.2byte	0x4
+  67 0006 00000000 		.4byte	.Ldebug_abbrev0
+  68 000a 04       		.byte	0x4
+  69 000b 01       		.uleb128 0x1
+  70 000c 8E000000 		.4byte	.LASF19
+  71 0010 0C       		.byte	0xc
+  72 0011 82000000 		.4byte	.LASF20
+  73 0015 3C000000 		.4byte	.LASF21
+  74 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  75 001d 00000000 		.4byte	0
+  76 0021 00000000 		.4byte	.Ldebug_line0
+  77 0025 02       		.uleb128 0x2
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 3
+
+
+  78 0026 01       		.byte	0x1
+  79 0027 06       		.byte	0x6
+  80 0028 81010000 		.4byte	.LASF0
+  81 002c 02       		.uleb128 0x2
+  82 002d 01       		.byte	0x1
+  83 002e 08       		.byte	0x8
+  84 002f 3F010000 		.4byte	.LASF1
+  85 0033 02       		.uleb128 0x2
+  86 0034 02       		.byte	0x2
+  87 0035 05       		.byte	0x5
+  88 0036 AD010000 		.4byte	.LASF2
+  89 003a 02       		.uleb128 0x2
+  90 003b 02       		.byte	0x2
+  91 003c 07       		.byte	0x7
+  92 003d 0E000000 		.4byte	.LASF3
+  93 0041 03       		.uleb128 0x3
+  94 0042 99010000 		.4byte	.LASF9
+  95 0046 02       		.byte	0x2
+  96 0047 3F       		.byte	0x3f
+  97 0048 4C000000 		.4byte	0x4c
+  98 004c 02       		.uleb128 0x2
+  99 004d 04       		.byte	0x4
+ 100 004e 05       		.byte	0x5
+ 101 004f 52010000 		.4byte	.LASF4
+ 102 0053 02       		.uleb128 0x2
+ 103 0054 04       		.byte	0x4
+ 104 0055 07       		.byte	0x7
+ 105 0056 5B010000 		.4byte	.LASF5
+ 106 005a 02       		.uleb128 0x2
+ 107 005b 08       		.byte	0x8
+ 108 005c 05       		.byte	0x5
+ 109 005d 00000000 		.4byte	.LASF6
+ 110 0061 02       		.uleb128 0x2
+ 111 0062 08       		.byte	0x8
+ 112 0063 07       		.byte	0x7
+ 113 0064 22010000 		.4byte	.LASF7
+ 114 0068 04       		.uleb128 0x4
+ 115 0069 04       		.byte	0x4
+ 116 006a 05       		.byte	0x5
+ 117 006b 696E7400 		.ascii	"int\000"
+ 118 006f 02       		.uleb128 0x2
+ 119 0070 04       		.byte	0x4
+ 120 0071 07       		.byte	0x7
+ 121 0072 21000000 		.4byte	.LASF8
+ 122 0076 03       		.uleb128 0x3
+ 123 0077 B7010000 		.4byte	.LASF10
+ 124 007b 03       		.byte	0x3
+ 125 007c 2C       		.byte	0x2c
+ 126 007d 41000000 		.4byte	0x41
+ 127 0081 05       		.uleb128 0x5
+ 128 0082 1C010000 		.4byte	.LASF11
+ 129 0086 04       		.byte	0x4
+ 130 0087 E401     		.2byte	0x1e4
+ 131 0089 2C000000 		.4byte	0x2c
+ 132 008d 02       		.uleb128 0x2
+ 133 008e 04       		.byte	0x4
+ 134 008f 04       		.byte	0x4
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 4
+
+
+ 135 0090 39010000 		.4byte	.LASF12
+ 136 0094 02       		.uleb128 0x2
+ 137 0095 08       		.byte	0x8
+ 138 0096 04       		.byte	0x4
+ 139 0097 6D010000 		.4byte	.LASF13
+ 140 009b 02       		.uleb128 0x2
+ 141 009c 01       		.byte	0x1
+ 142 009d 08       		.byte	0x8
+ 143 009e 4D010000 		.4byte	.LASF14
+ 144 00a2 02       		.uleb128 0x2
+ 145 00a3 08       		.byte	0x8
+ 146 00a4 04       		.byte	0x4
+ 147 00a5 8D010000 		.4byte	.LASF15
+ 148 00a9 02       		.uleb128 0x2
+ 149 00aa 04       		.byte	0x4
+ 150 00ab 07       		.byte	0x7
+ 151 00ac BF010000 		.4byte	.LASF16
+ 152 00b0 06       		.uleb128 0x6
+ 153 00b1 89000000 		.4byte	.LASF22
+ 154 00b5 01       		.byte	0x1
+ 155 00b6 0E       		.byte	0xe
+ 156 00b7 68000000 		.4byte	0x68
+ 157 00bb 00000000 		.4byte	.LFB63
+ 158 00bf 10000000 		.4byte	.LFE63-.LFB63
+ 159 00c3 01       		.uleb128 0x1
+ 160 00c4 9C       		.byte	0x9c
+ 161 00c5 EE000000 		.4byte	0xee
+ 162 00c9 07       		.uleb128 0x7
+ 163 00ca 6F6E6500 		.ascii	"one\000"
+ 164 00ce 01       		.byte	0x1
+ 165 00cf 14       		.byte	0x14
+ 166 00d0 81000000 		.4byte	0x81
+ 167 00d4 01       		.byte	0x1
+ 168 00d5 08       		.uleb128 0x8
+ 169 00d6 08000000 		.4byte	.LVL0
+ 170 00da FF000000 		.4byte	0xff
+ 171 00de 09       		.uleb128 0x9
+ 172 00df 0E000000 		.4byte	.LVL1
+ 173 00e3 0A010000 		.4byte	0x10a
+ 174 00e7 0A       		.uleb128 0xa
+ 175 00e8 01       		.uleb128 0x1
+ 176 00e9 50       		.byte	0x50
+ 177 00ea 01       		.uleb128 0x1
+ 178 00eb 31       		.byte	0x31
+ 179 00ec 00       		.byte	0
+ 180 00ed 00       		.byte	0
+ 181 00ee 0B       		.uleb128 0xb
+ 182 00ef 74010000 		.4byte	.LASF23
+ 183 00f3 07       		.byte	0x7
+ 184 00f4 1207     		.2byte	0x712
+ 185 00f6 FA000000 		.4byte	0xfa
+ 186 00fa 0C       		.uleb128 0xc
+ 187 00fb 76000000 		.4byte	0x76
+ 188 00ff 0D       		.uleb128 0xd
+ 189 0100 A3010000 		.4byte	.LASF17
+ 190 0104 A3010000 		.4byte	.LASF17
+ 191 0108 05       		.byte	0x5
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 5
+
+
+ 192 0109 92       		.byte	0x92
+ 193 010a 0D       		.uleb128 0xd
+ 194 010b 2E000000 		.4byte	.LASF18
+ 195 010f 2E000000 		.4byte	.LASF18
+ 196 0113 06       		.byte	0x6
+ 197 0114 2F       		.byte	0x2f
+ 198 0115 00       		.byte	0
+ 199              		.section	.debug_abbrev,"",%progbits
+ 200              	.Ldebug_abbrev0:
+ 201 0000 01       		.uleb128 0x1
+ 202 0001 11       		.uleb128 0x11
+ 203 0002 01       		.byte	0x1
+ 204 0003 25       		.uleb128 0x25
+ 205 0004 0E       		.uleb128 0xe
+ 206 0005 13       		.uleb128 0x13
+ 207 0006 0B       		.uleb128 0xb
+ 208 0007 03       		.uleb128 0x3
+ 209 0008 0E       		.uleb128 0xe
+ 210 0009 1B       		.uleb128 0x1b
+ 211 000a 0E       		.uleb128 0xe
+ 212 000b 55       		.uleb128 0x55
+ 213 000c 17       		.uleb128 0x17
+ 214 000d 11       		.uleb128 0x11
+ 215 000e 01       		.uleb128 0x1
+ 216 000f 10       		.uleb128 0x10
+ 217 0010 17       		.uleb128 0x17
+ 218 0011 00       		.byte	0
+ 219 0012 00       		.byte	0
+ 220 0013 02       		.uleb128 0x2
+ 221 0014 24       		.uleb128 0x24
+ 222 0015 00       		.byte	0
+ 223 0016 0B       		.uleb128 0xb
+ 224 0017 0B       		.uleb128 0xb
+ 225 0018 3E       		.uleb128 0x3e
+ 226 0019 0B       		.uleb128 0xb
+ 227 001a 03       		.uleb128 0x3
+ 228 001b 0E       		.uleb128 0xe
+ 229 001c 00       		.byte	0
+ 230 001d 00       		.byte	0
+ 231 001e 03       		.uleb128 0x3
+ 232 001f 16       		.uleb128 0x16
+ 233 0020 00       		.byte	0
+ 234 0021 03       		.uleb128 0x3
+ 235 0022 0E       		.uleb128 0xe
+ 236 0023 3A       		.uleb128 0x3a
+ 237 0024 0B       		.uleb128 0xb
+ 238 0025 3B       		.uleb128 0x3b
+ 239 0026 0B       		.uleb128 0xb
+ 240 0027 49       		.uleb128 0x49
+ 241 0028 13       		.uleb128 0x13
+ 242 0029 00       		.byte	0
+ 243 002a 00       		.byte	0
+ 244 002b 04       		.uleb128 0x4
+ 245 002c 24       		.uleb128 0x24
+ 246 002d 00       		.byte	0
+ 247 002e 0B       		.uleb128 0xb
+ 248 002f 0B       		.uleb128 0xb
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 6
+
+
+ 249 0030 3E       		.uleb128 0x3e
+ 250 0031 0B       		.uleb128 0xb
+ 251 0032 03       		.uleb128 0x3
+ 252 0033 08       		.uleb128 0x8
+ 253 0034 00       		.byte	0
+ 254 0035 00       		.byte	0
+ 255 0036 05       		.uleb128 0x5
+ 256 0037 16       		.uleb128 0x16
+ 257 0038 00       		.byte	0
+ 258 0039 03       		.uleb128 0x3
+ 259 003a 0E       		.uleb128 0xe
+ 260 003b 3A       		.uleb128 0x3a
+ 261 003c 0B       		.uleb128 0xb
+ 262 003d 3B       		.uleb128 0x3b
+ 263 003e 05       		.uleb128 0x5
+ 264 003f 49       		.uleb128 0x49
+ 265 0040 13       		.uleb128 0x13
+ 266 0041 00       		.byte	0
+ 267 0042 00       		.byte	0
+ 268 0043 06       		.uleb128 0x6
+ 269 0044 2E       		.uleb128 0x2e
+ 270 0045 01       		.byte	0x1
+ 271 0046 3F       		.uleb128 0x3f
+ 272 0047 19       		.uleb128 0x19
+ 273 0048 03       		.uleb128 0x3
+ 274 0049 0E       		.uleb128 0xe
+ 275 004a 3A       		.uleb128 0x3a
+ 276 004b 0B       		.uleb128 0xb
+ 277 004c 3B       		.uleb128 0x3b
+ 278 004d 0B       		.uleb128 0xb
+ 279 004e 27       		.uleb128 0x27
+ 280 004f 19       		.uleb128 0x19
+ 281 0050 49       		.uleb128 0x49
+ 282 0051 13       		.uleb128 0x13
+ 283 0052 8701     		.uleb128 0x87
+ 284 0054 19       		.uleb128 0x19
+ 285 0055 11       		.uleb128 0x11
+ 286 0056 01       		.uleb128 0x1
+ 287 0057 12       		.uleb128 0x12
+ 288 0058 06       		.uleb128 0x6
+ 289 0059 40       		.uleb128 0x40
+ 290 005a 18       		.uleb128 0x18
+ 291 005b 9742     		.uleb128 0x2117
+ 292 005d 19       		.uleb128 0x19
+ 293 005e 01       		.uleb128 0x1
+ 294 005f 13       		.uleb128 0x13
+ 295 0060 00       		.byte	0
+ 296 0061 00       		.byte	0
+ 297 0062 07       		.uleb128 0x7
+ 298 0063 34       		.uleb128 0x34
+ 299 0064 00       		.byte	0
+ 300 0065 03       		.uleb128 0x3
+ 301 0066 08       		.uleb128 0x8
+ 302 0067 3A       		.uleb128 0x3a
+ 303 0068 0B       		.uleb128 0xb
+ 304 0069 3B       		.uleb128 0x3b
+ 305 006a 0B       		.uleb128 0xb
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 7
+
+
+ 306 006b 49       		.uleb128 0x49
+ 307 006c 13       		.uleb128 0x13
+ 308 006d 1C       		.uleb128 0x1c
+ 309 006e 0B       		.uleb128 0xb
+ 310 006f 00       		.byte	0
+ 311 0070 00       		.byte	0
+ 312 0071 08       		.uleb128 0x8
+ 313 0072 898201   		.uleb128 0x4109
+ 314 0075 00       		.byte	0
+ 315 0076 11       		.uleb128 0x11
+ 316 0077 01       		.uleb128 0x1
+ 317 0078 31       		.uleb128 0x31
+ 318 0079 13       		.uleb128 0x13
+ 319 007a 00       		.byte	0
+ 320 007b 00       		.byte	0
+ 321 007c 09       		.uleb128 0x9
+ 322 007d 898201   		.uleb128 0x4109
+ 323 0080 01       		.byte	0x1
+ 324 0081 11       		.uleb128 0x11
+ 325 0082 01       		.uleb128 0x1
+ 326 0083 31       		.uleb128 0x31
+ 327 0084 13       		.uleb128 0x13
+ 328 0085 00       		.byte	0
+ 329 0086 00       		.byte	0
+ 330 0087 0A       		.uleb128 0xa
+ 331 0088 8A8201   		.uleb128 0x410a
+ 332 008b 00       		.byte	0
+ 333 008c 02       		.uleb128 0x2
+ 334 008d 18       		.uleb128 0x18
+ 335 008e 9142     		.uleb128 0x2111
+ 336 0090 18       		.uleb128 0x18
+ 337 0091 00       		.byte	0
+ 338 0092 00       		.byte	0
+ 339 0093 0B       		.uleb128 0xb
+ 340 0094 34       		.uleb128 0x34
+ 341 0095 00       		.byte	0
+ 342 0096 03       		.uleb128 0x3
+ 343 0097 0E       		.uleb128 0xe
+ 344 0098 3A       		.uleb128 0x3a
+ 345 0099 0B       		.uleb128 0xb
+ 346 009a 3B       		.uleb128 0x3b
+ 347 009b 05       		.uleb128 0x5
+ 348 009c 49       		.uleb128 0x49
+ 349 009d 13       		.uleb128 0x13
+ 350 009e 3F       		.uleb128 0x3f
+ 351 009f 19       		.uleb128 0x19
+ 352 00a0 3C       		.uleb128 0x3c
+ 353 00a1 19       		.uleb128 0x19
+ 354 00a2 00       		.byte	0
+ 355 00a3 00       		.byte	0
+ 356 00a4 0C       		.uleb128 0xc
+ 357 00a5 35       		.uleb128 0x35
+ 358 00a6 00       		.byte	0
+ 359 00a7 49       		.uleb128 0x49
+ 360 00a8 13       		.uleb128 0x13
+ 361 00a9 00       		.byte	0
+ 362 00aa 00       		.byte	0
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 8
+
+
+ 363 00ab 0D       		.uleb128 0xd
+ 364 00ac 2E       		.uleb128 0x2e
+ 365 00ad 00       		.byte	0
+ 366 00ae 3F       		.uleb128 0x3f
+ 367 00af 19       		.uleb128 0x19
+ 368 00b0 3C       		.uleb128 0x3c
+ 369 00b1 19       		.uleb128 0x19
+ 370 00b2 6E       		.uleb128 0x6e
+ 371 00b3 0E       		.uleb128 0xe
+ 372 00b4 03       		.uleb128 0x3
+ 373 00b5 0E       		.uleb128 0xe
+ 374 00b6 3A       		.uleb128 0x3a
+ 375 00b7 0B       		.uleb128 0xb
+ 376 00b8 3B       		.uleb128 0x3b
+ 377 00b9 0B       		.uleb128 0xb
+ 378 00ba 00       		.byte	0
+ 379 00bb 00       		.byte	0
+ 380 00bc 00       		.byte	0
+ 381              		.section	.debug_aranges,"",%progbits
+ 382 0000 1C000000 		.4byte	0x1c
+ 383 0004 0200     		.2byte	0x2
+ 384 0006 00000000 		.4byte	.Ldebug_info0
+ 385 000a 04       		.byte	0x4
+ 386 000b 00       		.byte	0
+ 387 000c 0000     		.2byte	0
+ 388 000e 0000     		.2byte	0
+ 389 0010 00000000 		.4byte	.LFB63
+ 390 0014 10000000 		.4byte	.LFE63-.LFB63
+ 391 0018 00000000 		.4byte	0
+ 392 001c 00000000 		.4byte	0
+ 393              		.section	.debug_ranges,"",%progbits
+ 394              	.Ldebug_ranges0:
+ 395 0000 00000000 		.4byte	.LFB63
+ 396 0004 10000000 		.4byte	.LFE63
+ 397 0008 00000000 		.4byte	0
+ 398 000c 00000000 		.4byte	0
+ 399              		.section	.debug_line,"",%progbits
+ 400              	.Ldebug_line0:
+ 401 0000 80010000 		.section	.debug_str,"MS",%progbits,1
+ 401      02006201 
+ 401      00000201 
+ 401      FB0E0D00 
+ 401      01010101 
+ 402              	.LASF6:
+ 403 0000 6C6F6E67 		.ascii	"long long int\000"
+ 403      206C6F6E 
+ 403      6720696E 
+ 403      7400
+ 404              	.LASF3:
+ 405 000e 73686F72 		.ascii	"short unsigned int\000"
+ 405      7420756E 
+ 405      7369676E 
+ 405      65642069 
+ 405      6E7400
+ 406              	.LASF8:
+ 407 0021 756E7369 		.ascii	"unsigned int\000"
+ 407      676E6564 
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 9
+
+
+ 407      20696E74 
+ 407      00
+ 408              	.LASF18:
+ 409 002e 436F6E74 		.ascii	"Control_Write\000"
+ 409      726F6C5F 
+ 409      57726974 
+ 409      6500
+ 410              	.LASF21:
+ 411 003c 433A5C55 		.ascii	"C:\\Users\\jfortner\\Desktop\\Fortner_Lab_1\\Lab_1_"
+ 411      73657273 
+ 411      5C6A666F 
+ 411      72746E65 
+ 411      725C4465 
+ 412 006a 4750494F 		.ascii	"GPIO_Pin_Toggling.cydsn\000"
+ 412      5F50696E 
+ 412      5F546F67 
+ 412      676C696E 
+ 412      672E6379 
+ 413              	.LASF20:
+ 414 0082 6D61696E 		.ascii	"main.c\000"
+ 414      2E6300
+ 415              	.LASF22:
+ 416 0089 6D61696E 		.ascii	"main\000"
+ 416      00
+ 417              	.LASF19:
+ 418 008e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 418      43313120 
+ 418      352E342E 
+ 418      31203230 
+ 418      31363036 
+ 419 00c1 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 419      20726576 
+ 419      6973696F 
+ 419      6E203233 
+ 419      37373135 
+ 420 00f4 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 420      66756E63 
+ 420      74696F6E 
+ 420      2D736563 
+ 420      74696F6E 
+ 421              	.LASF11:
+ 422 011c 75696E74 		.ascii	"uint8\000"
+ 422      3800
+ 423              	.LASF7:
+ 424 0122 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 424      206C6F6E 
+ 424      6720756E 
+ 424      7369676E 
+ 424      65642069 
+ 425              	.LASF12:
+ 426 0139 666C6F61 		.ascii	"float\000"
+ 426      7400
+ 427              	.LASF1:
+ 428 013f 756E7369 		.ascii	"unsigned char\000"
+ 428      676E6564 
+ 428      20636861 
+ 428      7200
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\ccnW2fmk.s 			page 10
+
+
+ 429              	.LASF14:
+ 430 014d 63686172 		.ascii	"char\000"
+ 430      00
+ 431              	.LASF4:
+ 432 0152 6C6F6E67 		.ascii	"long int\000"
+ 432      20696E74 
+ 432      00
+ 433              	.LASF5:
+ 434 015b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 434      20756E73 
+ 434      69676E65 
+ 434      6420696E 
+ 434      7400
+ 435              	.LASF13:
+ 436 016d 646F7562 		.ascii	"double\000"
+ 436      6C6500
+ 437              	.LASF23:
+ 438 0174 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 438      52784275 
+ 438      66666572 
+ 438      00
+ 439              	.LASF0:
+ 440 0181 7369676E 		.ascii	"signed char\000"
+ 440      65642063 
+ 440      68617200 
+ 441              	.LASF15:
+ 442 018d 6C6F6E67 		.ascii	"long double\000"
+ 442      20646F75 
+ 442      626C6500 
+ 443              	.LASF9:
+ 444 0199 5F5F696E 		.ascii	"__int32_t\000"
+ 444      7433325F 
+ 444      7400
+ 445              	.LASF17:
+ 446 01a3 50574D5F 		.ascii	"PWM_Start\000"
+ 446      53746172 
+ 446      7400
+ 447              	.LASF2:
+ 448 01ad 73686F72 		.ascii	"short int\000"
+ 448      7420696E 
+ 448      7400
+ 449              	.LASF10:
+ 450 01b7 696E7433 		.ascii	"int32_t\000"
+ 450      325F7400 
+ 451              	.LASF16:
+ 452 01bf 73697A65 		.ascii	"sizetype\000"
+ 452      74797065 
+ 452      00
+ 453              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

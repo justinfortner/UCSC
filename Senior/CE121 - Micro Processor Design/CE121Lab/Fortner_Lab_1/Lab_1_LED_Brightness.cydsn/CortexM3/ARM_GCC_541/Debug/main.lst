@@ -1,0 +1,609 @@
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB63:
+  27              		.file 1 "main.c"
+   1:main.c        **** /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * ========================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** 
+  14:main.c        **** int main(void)
+  15:main.c        **** {
+  28              		.loc 1 15 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 3, -8
+  35              		.cfi_offset 14, -4
+  16:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+  36              		.loc 1 16 0
+  37              		.syntax unified
+  38              	@ 16 "main.c" 1
+  39 0002 62B6     		CPSIE   i
+  40              	@ 0 "" 2
+  17:main.c        ****     PWM_Start();
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 2
+
+
+  41              		.loc 1 17 0
+  42              		.thumb
+  43              		.syntax unified
+  44 0004 FFF7FEFF 		bl	PWM_Start
+  45              	.LVL0:
+  18:main.c        ****     ADC_Start();
+  46              		.loc 1 18 0
+  47 0008 FFF7FEFF 		bl	ADC_Start
+  48              	.LVL1:
+  49              	.L2:
+  19:main.c        ****     uint16 val;
+  20:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  21:main.c        **** 
+  22:main.c        ****     for(;;)
+  23:main.c        ****     {
+  24:main.c        ****         val = ADC_Read16();
+  50              		.loc 1 24 0 discriminator 1
+  51 000c FFF7FEFF 		bl	ADC_Read16
+  52              	.LVL2:
+  53 0010 80B2     		uxth	r0, r0
+  54              	.LVL3:
+  25:main.c        ****         //val = ADC_Read32();
+  26:main.c        ****         PWM_WriteCompare(val / 60);
+  55              		.loc 1 26 0 discriminator 1
+  56 0012 034B     		ldr	r3, .L4
+  57 0014 A3FB0030 		umull	r3, r0, r3, r0
+  58              	.LVL4:
+  59 0018 4009     		lsrs	r0, r0, #5
+  60 001a FFF7FEFF 		bl	PWM_WriteCompare
+  61              	.LVL5:
+  62 001e F5E7     		b	.L2
+  63              	.L5:
+  64              		.align	2
+  65              	.L4:
+  66 0020 89888888 		.word	-2004318071
+  67              		.cfi_endproc
+  68              	.LFE63:
+  69              		.size	main, .-main
+  70              		.text
+  71              	.Letext0:
+  72              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  73              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  74              		.file 4 "Generated_Source\\PSoC5/cytypes.h"
+  75              		.file 5 "Generated_Source\\PSoC5/PWM.h"
+  76              		.file 6 "Generated_Source\\PSoC5/ADC.h"
+  77              		.file 7 "Generated_Source\\PSoC5/core_cm3.h"
+  78              		.section	.debug_info,"",%progbits
+  79              	.Ldebug_info0:
+  80 0000 37010000 		.4byte	0x137
+  81 0004 0400     		.2byte	0x4
+  82 0006 00000000 		.4byte	.Ldebug_abbrev0
+  83 000a 04       		.byte	0x4
+  84 000b 01       		.uleb128 0x1
+  85 000c 3A000000 		.4byte	.LASF21
+  86 0010 0C       		.byte	0xc
+  87 0011 2E000000 		.4byte	.LASF22
+  88 0015 D0000000 		.4byte	.LASF23
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 3
+
+
+  89 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  90 001d 00000000 		.4byte	0
+  91 0021 00000000 		.4byte	.Ldebug_line0
+  92 0025 02       		.uleb128 0x2
+  93 0026 01       		.byte	0x1
+  94 0027 06       		.byte	0x6
+  95 0028 72010000 		.4byte	.LASF0
+  96 002c 02       		.uleb128 0x2
+  97 002d 01       		.byte	0x1
+  98 002e 08       		.byte	0x8
+  99 002f 30010000 		.4byte	.LASF1
+ 100 0033 02       		.uleb128 0x2
+ 101 0034 02       		.byte	0x2
+ 102 0035 05       		.byte	0x5
+ 103 0036 B3010000 		.4byte	.LASF2
+ 104 003a 02       		.uleb128 0x2
+ 105 003b 02       		.byte	0x2
+ 106 003c 07       		.byte	0x7
+ 107 003d 0E000000 		.4byte	.LASF3
+ 108 0041 03       		.uleb128 0x3
+ 109 0042 95010000 		.4byte	.LASF9
+ 110 0046 02       		.byte	0x2
+ 111 0047 3F       		.byte	0x3f
+ 112 0048 4C000000 		.4byte	0x4c
+ 113 004c 02       		.uleb128 0x2
+ 114 004d 04       		.byte	0x4
+ 115 004e 05       		.byte	0x5
+ 116 004f 43010000 		.4byte	.LASF4
+ 117 0053 02       		.uleb128 0x2
+ 118 0054 04       		.byte	0x4
+ 119 0055 07       		.byte	0x7
+ 120 0056 4C010000 		.4byte	.LASF5
+ 121 005a 02       		.uleb128 0x2
+ 122 005b 08       		.byte	0x8
+ 123 005c 05       		.byte	0x5
+ 124 005d 00000000 		.4byte	.LASF6
+ 125 0061 02       		.uleb128 0x2
+ 126 0062 08       		.byte	0x8
+ 127 0063 07       		.byte	0x7
+ 128 0064 13010000 		.4byte	.LASF7
+ 129 0068 04       		.uleb128 0x4
+ 130 0069 04       		.byte	0x4
+ 131 006a 05       		.byte	0x5
+ 132 006b 696E7400 		.ascii	"int\000"
+ 133 006f 02       		.uleb128 0x2
+ 134 0070 04       		.byte	0x4
+ 135 0071 07       		.byte	0x7
+ 136 0072 21000000 		.4byte	.LASF8
+ 137 0076 03       		.uleb128 0x3
+ 138 0077 C8000000 		.4byte	.LASF10
+ 139 007b 03       		.byte	0x3
+ 140 007c 2C       		.byte	0x2c
+ 141 007d 41000000 		.4byte	0x41
+ 142 0081 05       		.uleb128 0x5
+ 143 0082 BD010000 		.4byte	.LASF11
+ 144 0086 04       		.byte	0x4
+ 145 0087 E501     		.2byte	0x1e5
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 4
+
+
+ 146 0089 3A000000 		.4byte	0x3a
+ 147 008d 02       		.uleb128 0x2
+ 148 008e 04       		.byte	0x4
+ 149 008f 04       		.byte	0x4
+ 150 0090 2A010000 		.4byte	.LASF12
+ 151 0094 02       		.uleb128 0x2
+ 152 0095 08       		.byte	0x8
+ 153 0096 04       		.byte	0x4
+ 154 0097 5E010000 		.4byte	.LASF13
+ 155 009b 02       		.uleb128 0x2
+ 156 009c 01       		.byte	0x1
+ 157 009d 08       		.byte	0x8
+ 158 009e 3E010000 		.4byte	.LASF14
+ 159 00a2 02       		.uleb128 0x2
+ 160 00a3 08       		.byte	0x8
+ 161 00a4 04       		.byte	0x4
+ 162 00a5 7E010000 		.4byte	.LASF15
+ 163 00a9 02       		.uleb128 0x2
+ 164 00aa 04       		.byte	0x4
+ 165 00ab 07       		.byte	0x7
+ 166 00ac D5010000 		.4byte	.LASF16
+ 167 00b0 06       		.uleb128 0x6
+ 168 00b1 35000000 		.4byte	.LASF24
+ 169 00b5 01       		.byte	0x1
+ 170 00b6 0E       		.byte	0xe
+ 171 00b7 68000000 		.4byte	0x68
+ 172 00bb 00000000 		.4byte	.LFB63
+ 173 00bf 24000000 		.4byte	.LFE63-.LFB63
+ 174 00c3 01       		.uleb128 0x1
+ 175 00c4 9C       		.byte	0x9c
+ 176 00c5 FD000000 		.4byte	0xfd
+ 177 00c9 07       		.uleb128 0x7
+ 178 00ca 76616C00 		.ascii	"val\000"
+ 179 00ce 01       		.byte	0x1
+ 180 00cf 13       		.byte	0x13
+ 181 00d0 81000000 		.4byte	0x81
+ 182 00d4 00000000 		.4byte	.LLST0
+ 183 00d8 08       		.uleb128 0x8
+ 184 00d9 08000000 		.4byte	.LVL0
+ 185 00dd 0E010000 		.4byte	0x10e
+ 186 00e1 08       		.uleb128 0x8
+ 187 00e2 0C000000 		.4byte	.LVL1
+ 188 00e6 19010000 		.4byte	0x119
+ 189 00ea 08       		.uleb128 0x8
+ 190 00eb 10000000 		.4byte	.LVL2
+ 191 00ef 24010000 		.4byte	0x124
+ 192 00f3 08       		.uleb128 0x8
+ 193 00f4 1E000000 		.4byte	.LVL5
+ 194 00f8 2F010000 		.4byte	0x12f
+ 195 00fc 00       		.byte	0
+ 196 00fd 09       		.uleb128 0x9
+ 197 00fe 65010000 		.4byte	.LASF25
+ 198 0102 07       		.byte	0x7
+ 199 0103 1207     		.2byte	0x712
+ 200 0105 09010000 		.4byte	0x109
+ 201 0109 0A       		.uleb128 0xa
+ 202 010a 76000000 		.4byte	0x76
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 5
+
+
+ 203 010e 0B       		.uleb128 0xb
+ 204 010f 9F010000 		.4byte	.LASF17
+ 205 0113 9F010000 		.4byte	.LASF17
+ 206 0117 05       		.byte	0x5
+ 207 0118 92       		.byte	0x92
+ 208 0119 0B       		.uleb128 0xb
+ 209 011a A9010000 		.4byte	.LASF18
+ 210 011e A9010000 		.4byte	.LASF18
+ 211 0122 06       		.byte	0x6
+ 212 0123 3A       		.byte	0x3a
+ 213 0124 0B       		.uleb128 0xb
+ 214 0125 8A010000 		.4byte	.LASF19
+ 215 0129 8A010000 		.4byte	.LASF19
+ 216 012d 06       		.byte	0x6
+ 217 012e 55       		.byte	0x55
+ 218 012f 0B       		.uleb128 0xb
+ 219 0130 C4010000 		.4byte	.LASF20
+ 220 0134 C4010000 		.4byte	.LASF20
+ 221 0138 05       		.byte	0x5
+ 222 0139 C3       		.byte	0xc3
+ 223 013a 00       		.byte	0
+ 224              		.section	.debug_abbrev,"",%progbits
+ 225              	.Ldebug_abbrev0:
+ 226 0000 01       		.uleb128 0x1
+ 227 0001 11       		.uleb128 0x11
+ 228 0002 01       		.byte	0x1
+ 229 0003 25       		.uleb128 0x25
+ 230 0004 0E       		.uleb128 0xe
+ 231 0005 13       		.uleb128 0x13
+ 232 0006 0B       		.uleb128 0xb
+ 233 0007 03       		.uleb128 0x3
+ 234 0008 0E       		.uleb128 0xe
+ 235 0009 1B       		.uleb128 0x1b
+ 236 000a 0E       		.uleb128 0xe
+ 237 000b 55       		.uleb128 0x55
+ 238 000c 17       		.uleb128 0x17
+ 239 000d 11       		.uleb128 0x11
+ 240 000e 01       		.uleb128 0x1
+ 241 000f 10       		.uleb128 0x10
+ 242 0010 17       		.uleb128 0x17
+ 243 0011 00       		.byte	0
+ 244 0012 00       		.byte	0
+ 245 0013 02       		.uleb128 0x2
+ 246 0014 24       		.uleb128 0x24
+ 247 0015 00       		.byte	0
+ 248 0016 0B       		.uleb128 0xb
+ 249 0017 0B       		.uleb128 0xb
+ 250 0018 3E       		.uleb128 0x3e
+ 251 0019 0B       		.uleb128 0xb
+ 252 001a 03       		.uleb128 0x3
+ 253 001b 0E       		.uleb128 0xe
+ 254 001c 00       		.byte	0
+ 255 001d 00       		.byte	0
+ 256 001e 03       		.uleb128 0x3
+ 257 001f 16       		.uleb128 0x16
+ 258 0020 00       		.byte	0
+ 259 0021 03       		.uleb128 0x3
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 6
+
+
+ 260 0022 0E       		.uleb128 0xe
+ 261 0023 3A       		.uleb128 0x3a
+ 262 0024 0B       		.uleb128 0xb
+ 263 0025 3B       		.uleb128 0x3b
+ 264 0026 0B       		.uleb128 0xb
+ 265 0027 49       		.uleb128 0x49
+ 266 0028 13       		.uleb128 0x13
+ 267 0029 00       		.byte	0
+ 268 002a 00       		.byte	0
+ 269 002b 04       		.uleb128 0x4
+ 270 002c 24       		.uleb128 0x24
+ 271 002d 00       		.byte	0
+ 272 002e 0B       		.uleb128 0xb
+ 273 002f 0B       		.uleb128 0xb
+ 274 0030 3E       		.uleb128 0x3e
+ 275 0031 0B       		.uleb128 0xb
+ 276 0032 03       		.uleb128 0x3
+ 277 0033 08       		.uleb128 0x8
+ 278 0034 00       		.byte	0
+ 279 0035 00       		.byte	0
+ 280 0036 05       		.uleb128 0x5
+ 281 0037 16       		.uleb128 0x16
+ 282 0038 00       		.byte	0
+ 283 0039 03       		.uleb128 0x3
+ 284 003a 0E       		.uleb128 0xe
+ 285 003b 3A       		.uleb128 0x3a
+ 286 003c 0B       		.uleb128 0xb
+ 287 003d 3B       		.uleb128 0x3b
+ 288 003e 05       		.uleb128 0x5
+ 289 003f 49       		.uleb128 0x49
+ 290 0040 13       		.uleb128 0x13
+ 291 0041 00       		.byte	0
+ 292 0042 00       		.byte	0
+ 293 0043 06       		.uleb128 0x6
+ 294 0044 2E       		.uleb128 0x2e
+ 295 0045 01       		.byte	0x1
+ 296 0046 3F       		.uleb128 0x3f
+ 297 0047 19       		.uleb128 0x19
+ 298 0048 03       		.uleb128 0x3
+ 299 0049 0E       		.uleb128 0xe
+ 300 004a 3A       		.uleb128 0x3a
+ 301 004b 0B       		.uleb128 0xb
+ 302 004c 3B       		.uleb128 0x3b
+ 303 004d 0B       		.uleb128 0xb
+ 304 004e 27       		.uleb128 0x27
+ 305 004f 19       		.uleb128 0x19
+ 306 0050 49       		.uleb128 0x49
+ 307 0051 13       		.uleb128 0x13
+ 308 0052 8701     		.uleb128 0x87
+ 309 0054 19       		.uleb128 0x19
+ 310 0055 11       		.uleb128 0x11
+ 311 0056 01       		.uleb128 0x1
+ 312 0057 12       		.uleb128 0x12
+ 313 0058 06       		.uleb128 0x6
+ 314 0059 40       		.uleb128 0x40
+ 315 005a 18       		.uleb128 0x18
+ 316 005b 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 7
+
+
+ 317 005d 19       		.uleb128 0x19
+ 318 005e 01       		.uleb128 0x1
+ 319 005f 13       		.uleb128 0x13
+ 320 0060 00       		.byte	0
+ 321 0061 00       		.byte	0
+ 322 0062 07       		.uleb128 0x7
+ 323 0063 34       		.uleb128 0x34
+ 324 0064 00       		.byte	0
+ 325 0065 03       		.uleb128 0x3
+ 326 0066 08       		.uleb128 0x8
+ 327 0067 3A       		.uleb128 0x3a
+ 328 0068 0B       		.uleb128 0xb
+ 329 0069 3B       		.uleb128 0x3b
+ 330 006a 0B       		.uleb128 0xb
+ 331 006b 49       		.uleb128 0x49
+ 332 006c 13       		.uleb128 0x13
+ 333 006d 02       		.uleb128 0x2
+ 334 006e 17       		.uleb128 0x17
+ 335 006f 00       		.byte	0
+ 336 0070 00       		.byte	0
+ 337 0071 08       		.uleb128 0x8
+ 338 0072 898201   		.uleb128 0x4109
+ 339 0075 00       		.byte	0
+ 340 0076 11       		.uleb128 0x11
+ 341 0077 01       		.uleb128 0x1
+ 342 0078 31       		.uleb128 0x31
+ 343 0079 13       		.uleb128 0x13
+ 344 007a 00       		.byte	0
+ 345 007b 00       		.byte	0
+ 346 007c 09       		.uleb128 0x9
+ 347 007d 34       		.uleb128 0x34
+ 348 007e 00       		.byte	0
+ 349 007f 03       		.uleb128 0x3
+ 350 0080 0E       		.uleb128 0xe
+ 351 0081 3A       		.uleb128 0x3a
+ 352 0082 0B       		.uleb128 0xb
+ 353 0083 3B       		.uleb128 0x3b
+ 354 0084 05       		.uleb128 0x5
+ 355 0085 49       		.uleb128 0x49
+ 356 0086 13       		.uleb128 0x13
+ 357 0087 3F       		.uleb128 0x3f
+ 358 0088 19       		.uleb128 0x19
+ 359 0089 3C       		.uleb128 0x3c
+ 360 008a 19       		.uleb128 0x19
+ 361 008b 00       		.byte	0
+ 362 008c 00       		.byte	0
+ 363 008d 0A       		.uleb128 0xa
+ 364 008e 35       		.uleb128 0x35
+ 365 008f 00       		.byte	0
+ 366 0090 49       		.uleb128 0x49
+ 367 0091 13       		.uleb128 0x13
+ 368 0092 00       		.byte	0
+ 369 0093 00       		.byte	0
+ 370 0094 0B       		.uleb128 0xb
+ 371 0095 2E       		.uleb128 0x2e
+ 372 0096 00       		.byte	0
+ 373 0097 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 8
+
+
+ 374 0098 19       		.uleb128 0x19
+ 375 0099 3C       		.uleb128 0x3c
+ 376 009a 19       		.uleb128 0x19
+ 377 009b 6E       		.uleb128 0x6e
+ 378 009c 0E       		.uleb128 0xe
+ 379 009d 03       		.uleb128 0x3
+ 380 009e 0E       		.uleb128 0xe
+ 381 009f 3A       		.uleb128 0x3a
+ 382 00a0 0B       		.uleb128 0xb
+ 383 00a1 3B       		.uleb128 0x3b
+ 384 00a2 0B       		.uleb128 0xb
+ 385 00a3 00       		.byte	0
+ 386 00a4 00       		.byte	0
+ 387 00a5 00       		.byte	0
+ 388              		.section	.debug_loc,"",%progbits
+ 389              	.Ldebug_loc0:
+ 390              	.LLST0:
+ 391 0000 12000000 		.4byte	.LVL3
+ 392 0004 18000000 		.4byte	.LVL4
+ 393 0008 0100     		.2byte	0x1
+ 394 000a 50       		.byte	0x50
+ 395 000b 00000000 		.4byte	0
+ 396 000f 00000000 		.4byte	0
+ 397              		.section	.debug_aranges,"",%progbits
+ 398 0000 1C000000 		.4byte	0x1c
+ 399 0004 0200     		.2byte	0x2
+ 400 0006 00000000 		.4byte	.Ldebug_info0
+ 401 000a 04       		.byte	0x4
+ 402 000b 00       		.byte	0
+ 403 000c 0000     		.2byte	0
+ 404 000e 0000     		.2byte	0
+ 405 0010 00000000 		.4byte	.LFB63
+ 406 0014 24000000 		.4byte	.LFE63-.LFB63
+ 407 0018 00000000 		.4byte	0
+ 408 001c 00000000 		.4byte	0
+ 409              		.section	.debug_ranges,"",%progbits
+ 410              	.Ldebug_ranges0:
+ 411 0000 00000000 		.4byte	.LFB63
+ 412 0004 24000000 		.4byte	.LFE63
+ 413 0008 00000000 		.4byte	0
+ 414 000c 00000000 		.4byte	0
+ 415              		.section	.debug_line,"",%progbits
+ 416              	.Ldebug_line0:
+ 417 0000 80010000 		.section	.debug_str,"MS",%progbits,1
+ 417      02005E01 
+ 417      00000201 
+ 417      FB0E0D00 
+ 417      01010101 
+ 418              	.LASF6:
+ 419 0000 6C6F6E67 		.ascii	"long long int\000"
+ 419      206C6F6E 
+ 419      6720696E 
+ 419      7400
+ 420              	.LASF3:
+ 421 000e 73686F72 		.ascii	"short unsigned int\000"
+ 421      7420756E 
+ 421      7369676E 
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 9
+
+
+ 421      65642069 
+ 421      6E7400
+ 422              	.LASF8:
+ 423 0021 756E7369 		.ascii	"unsigned int\000"
+ 423      676E6564 
+ 423      20696E74 
+ 423      00
+ 424              	.LASF22:
+ 425 002e 6D61696E 		.ascii	"main.c\000"
+ 425      2E6300
+ 426              	.LASF24:
+ 427 0035 6D61696E 		.ascii	"main\000"
+ 427      00
+ 428              	.LASF21:
+ 429 003a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 429      43313120 
+ 429      352E342E 
+ 429      31203230 
+ 429      31363036 
+ 430 006d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 430      20726576 
+ 430      6973696F 
+ 430      6E203233 
+ 430      37373135 
+ 431 00a0 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 431      66756E63 
+ 431      74696F6E 
+ 431      2D736563 
+ 431      74696F6E 
+ 432              	.LASF10:
+ 433 00c8 696E7433 		.ascii	"int32_t\000"
+ 433      325F7400 
+ 434              	.LASF23:
+ 435 00d0 433A5C55 		.ascii	"C:\\Users\\jfortner\\Desktop\\Fortner_Lab_1\\Lab_1_"
+ 435      73657273 
+ 435      5C6A666F 
+ 435      72746E65 
+ 435      725C4465 
+ 436 00fe 4C45445F 		.ascii	"LED_Brightness.cydsn\000"
+ 436      42726967 
+ 436      68746E65 
+ 436      73732E63 
+ 436      7964736E 
+ 437              	.LASF7:
+ 438 0113 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 438      206C6F6E 
+ 438      6720756E 
+ 438      7369676E 
+ 438      65642069 
+ 439              	.LASF12:
+ 440 012a 666C6F61 		.ascii	"float\000"
+ 440      7400
+ 441              	.LASF1:
+ 442 0130 756E7369 		.ascii	"unsigned char\000"
+ 442      676E6564 
+ 442      20636861 
+ 442      7200
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 10
+
+
+ 443              	.LASF14:
+ 444 013e 63686172 		.ascii	"char\000"
+ 444      00
+ 445              	.LASF4:
+ 446 0143 6C6F6E67 		.ascii	"long int\000"
+ 446      20696E74 
+ 446      00
+ 447              	.LASF5:
+ 448 014c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 448      20756E73 
+ 448      69676E65 
+ 448      6420696E 
+ 448      7400
+ 449              	.LASF13:
+ 450 015e 646F7562 		.ascii	"double\000"
+ 450      6C6500
+ 451              	.LASF25:
+ 452 0165 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 452      52784275 
+ 452      66666572 
+ 452      00
+ 453              	.LASF0:
+ 454 0172 7369676E 		.ascii	"signed char\000"
+ 454      65642063 
+ 454      68617200 
+ 455              	.LASF15:
+ 456 017e 6C6F6E67 		.ascii	"long double\000"
+ 456      20646F75 
+ 456      626C6500 
+ 457              	.LASF19:
+ 458 018a 4144435F 		.ascii	"ADC_Read16\000"
+ 458      52656164 
+ 458      313600
+ 459              	.LASF9:
+ 460 0195 5F5F696E 		.ascii	"__int32_t\000"
+ 460      7433325F 
+ 460      7400
+ 461              	.LASF17:
+ 462 019f 50574D5F 		.ascii	"PWM_Start\000"
+ 462      53746172 
+ 462      7400
+ 463              	.LASF18:
+ 464 01a9 4144435F 		.ascii	"ADC_Start\000"
+ 464      53746172 
+ 464      7400
+ 465              	.LASF2:
+ 466 01b3 73686F72 		.ascii	"short int\000"
+ 466      7420696E 
+ 466      7400
+ 467              	.LASF11:
+ 468 01bd 75696E74 		.ascii	"uint16\000"
+ 468      313600
+ 469              	.LASF20:
+ 470 01c4 50574D5F 		.ascii	"PWM_WriteCompare\000"
+ 470      57726974 
+ 470      65436F6D 
+ 470      70617265 
+ARM GAS  C:\Users\jfortner\AppData\Local\Temp\cc2SMlRr.s 			page 11
+
+
+ 470      00
+ 471              	.LASF16:
+ 472 01d5 73697A65 		.ascii	"sizetype\000"
+ 472      74797065 
+ 472      00
+ 473              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,32 @@
+Justin Fortner
+ID#1481947
+jfortner
+CS101 PA3 Tantalo
+README
+
+Submitted Files:
+	Files Provided: 
+		None
+	
+	Files Altered:
+		Makefile:
+			Creates an executable Jar file Lex
+			Clean will remove Lex and class files
+	
+	Files Written:
+		Sparse.java:
+			Uses Matrix.java to read in a file on a matrix and perform functions on said matrix
+		Matrix.java:
+			List ADT creates services to be used by Sparse
+		List.java
+			List ADT creates services to be used by Matrix
+		MatrixTest.java
+			Tests the functions within matrix
+		ListTest.java
+			Tests the functions within List
+		Makefile:
+			Creates an executable Jar file Sparse
+			Clean will remove Sparse and class files
+		Readme:
+			List of all submitted files and descriptions of said files
+		
